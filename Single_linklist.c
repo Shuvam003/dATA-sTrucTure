@@ -342,15 +342,15 @@ void bubblesort_data()
 }
 void bubblesort_node()
 {
-    node **head_add = &head;
-    int swap;
-    node **temp, *ptr1, *ptr2;
-    if (*head_add == NULL)
+    if (head == NULL)
     {
         printf("\nList is empty...\n");
     }
     else
     {
+        node **head_add = &head;
+        int swap;
+        node **temp, *ptr1, *ptr2;
         do
         {
             swap = 0;

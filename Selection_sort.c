@@ -1,37 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
-int main()
-{
-    int size;
+#include<stdlib.h>
+int main() {
+    int n;
     printf("Enter the size of array: ");
-    scanf("%d", &size);
-    int *arr = (int *)malloc(size * sizeof(int));
+    scanf("%d",&n);
+    int *arr = (int*)malloc(n*sizeof(int));
     printf("Enter the element in array: ");
-    for (int k = 0; k < size; k++)
-        scanf("%d", &arr[k]);
-    printf("\nArray before sorting: [ ");
-    for (int i = 0; i < size; i++)
-        printf("%d ", arr[i]);
-    printf("]\n");
+    for(int k = 0; k<n; k++)
+        scanf("%d",&arr[k]);
     int i, j, position, swap;
-    for (i = 0; i < (size - 1); i++)
-    {
+    for (i = 0; i < (n - 1); i++) {
         position = i;
-        for (j = i + 1; j < size; j++)
-        {
+        for (j = i + 1; j < n; j++) {
             if (arr[position] > arr[j])
                 position = j;
         }
-        if (position != i)
-        {
+        if (position != i) {
             swap = arr[i];
             arr[i] = arr[position];
             arr[position] = swap;
         }
     }
-    printf("\nArray after sorting: [ ");
-    for (i = 0; i < size; i++)
+    for (i = 0; i < n; i++)
         printf("%d ", arr[i]);
-    printf("]\n");
     return 0;
 }
